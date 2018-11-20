@@ -44,6 +44,7 @@ func main() {
 	<-sig
 }
 
+// produceTextMessage generate text message and produce message on kafka.
 func produceTextMessage(producer sarama.AsyncProducer) {
 	for i := 0; ; i++ {
 		producer.Input() <- &sarama.ProducerMessage{
